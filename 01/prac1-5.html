@@ -13,7 +13,11 @@
             var numbers = [];
             //prac1-5 全ての要素に10を足す
             for (var i = 1; i <= 20; i++) {
-                numbers.push(i + 10);
+                numbers.push(i);
+            }
+            show(numbers);
+            for (var i = 0; i < 20; i++) {
+                numbers[i] = i + 11;
             }
             show(numbers);
         }
