@@ -17,11 +17,13 @@
 
         $(document).ready(function () {
             nouns = nounstext.split('\n');
+            verbs = verbstext.split('\n');
         });
 
         function runButtonPressed() {
             var noun = selectone(nouns);
-            show(noun);
+            var verb = selectone(verbs);
+            show(`${noun}は${noun}を${verb}`);
         }
 
         function selectone(array) {
