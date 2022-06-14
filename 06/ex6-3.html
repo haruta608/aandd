@@ -14,6 +14,7 @@
     <script>
 
         var nouns;
+        var verbs;
 
         $(document).ready(function () {
             nouns = nounstext.split('\n');
@@ -21,9 +22,32 @@
         });
 
         function runButtonPressed() {
-            var noun = selectone(nouns);
-            var verb = selectone(verbs);
-            show(`${noun}は${noun}を${verb}`);
+            for (; ;) {
+                var noun = selectone(nouns);
+                var verb = selectone(verbs);
+                // show(`${noun}は${noun}を${verb}`);
+                var pail = noun + verb;
+                // console.log(pail);
+                var chars = pail.split('');
+                // show(chars);
+                var array = [];
+                for (var i = 0; i < pail.length; i++) {
+                    var array_after = chars.pop();
+                    // console.log(array_after);
+                    array.push(array_after);
+                }
+                console.log(array);
+                var pail2 = array.join('');
+                // show(pail2);
+                var answer;
+
+                if (pail == pail2) {
+                    show(pail);
+                    answer = '回文です'
+                    show(answer);
+                    break;
+                }
+            }
         }
 
         function selectone(array) {
